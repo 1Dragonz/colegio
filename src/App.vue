@@ -1,26 +1,55 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <!-- Header -->
+    <AppHeader @scroll-to-section="scrollToSection" />
+    <v-main>
+      <v-container>
+        <!-- Secciones -->
+        <HeroSection ref="hero" />
+        <QuienesSomos ref="quienesSomos" />
+        <MisionVisionObjetivos ref="misionVisionObjetivos" />
+        <OfertaAcademica ref="ofertaAcademica" />
+        <ContactSection ref="contactSection" />
+      </v-container>
+    </v-main>
+    <!-- Footer -->
+    <AppFooter />
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from './components/AppHeader.vue'
+import HeroSection from './components/HeroSection.vue'
+import QuienesSomos from './components/QuienesSomos.vue'
+import MisionVisionObjetivos from './components/MisionVisionObjetivos.vue'
+import OfertaAcademica from './components/OfertaAcademica.vue'
+import ContactSection from './components/ContactSection.vue'
+import AppFooter from './components/AppFooter.vue'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    AppHeader,
+    HeroSection,
+    QuienesSomos,
+    MisionVisionObjetivos,
+    OfertaAcademica,
+    ContactSection,
+    AppFooter
+  },
+  methods: {
+    scrollToSection(section) {
+      const targetSection = this.$refs[section];
+      if (targetSection) {
+        window.scrollTo({
+          top: targetSection.$el.offsetTop - 120, // Ajusta 120 para tomar en cuenta la altura del header
+          behavior: 'smooth'
+        });
+      }
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url("bin/styles.css");
 </style>

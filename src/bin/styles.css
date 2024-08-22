@@ -1,0 +1,17 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #4A4A4A;
+  }
+  
+  h1, h2, h3 {
+    color: #1A73E8;
+  }
+  
+  .text-primary {
+    color: #1A73E8 !important;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
