@@ -29,7 +29,7 @@ export default {
 
 .section-title {
   font-family: 'Arial', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   font-weight: bold;
   color: #410E0B; /* Color del título */
   margin-bottom: 10px;
